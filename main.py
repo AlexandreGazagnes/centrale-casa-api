@@ -2,10 +2,24 @@
 Main application file 
 """
 
+from fastapi import FastAPI
+import random
 
-def main():
-    print("hello world")
+app = FastAPI()
 
 
-if __name__ == "__main__":
-    main()
+@app.get("/")
+async def hello():
+    return {"message": "Hello World"}
+
+
+@app.get("/predict/{description}")
+async def predict(description):
+
+    # all possible labels
+    categ_list = ["watches", "baby care", "home furniture"]
+
+    # best prediction system of the world
+    predicted_value = random.choice(categ_list)
+
+    return {"category": predicted_value, "description": description}
