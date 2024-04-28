@@ -1,5 +1,16 @@
+pandas
+
+ipython
+
 uvicorn
 fastapi
 
+pytest
+httpx
 
-ipython
+scipy==1.10.1
+scikit-learn
+
+
+# spacy
+gensim
